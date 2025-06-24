@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Lock, Home, Calendar, History, CreditCard, Dumbbell, Settings, ArrowLeft, QrCode, Clock, MapPin, CheckCircle, X, Eye, EyeOff } from 'lucide-react';
+import { User, Home, Calendar, History, Dumbbell, Settings, ArrowLeft, QrCode, Clock, MapPin, CheckCircle, Eye, EyeOff } from 'lucide-react';
 
 const MobileAppPrototype = () => {
   const [currentScreen, setCurrentScreen] = useState('login');
