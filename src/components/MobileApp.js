@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { User, Home, Calendar, History, Dumbbell, Settings, ArrowLeft, QrCode, Clock, MapPin, CheckCircle, Eye, EyeOff, Users, BarChart3, Package, Plus, Minus, Edit, Trash2, Save, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { User, Home, Calendar, History, Dumbbell, ArrowLeft, QrCode,  Eye, EyeOff, Users, BarChart3, Package, Plus, Minus, Edit, Trash2, Save, X } from 'lucide-react';
 
 const MobileAppPrototype = () => {
   const [currentScreen, setCurrentScreen] = useState('login');
   const [showPassword, setShowPassword] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
   
   // Base de datos simulada
@@ -209,7 +208,7 @@ const MobileAppPrototype = () => {
   const getActiveReservations = () => {
     const today = new Date().toISOString().split('T')[0];
     return getUserReservations().filter(res => 
-      res.status === 'Confirmada' || res.status === 'Activa' && res.date >= today
+      (res.status === 'Confirmada' || res.status === 'Activa') && res.date >= today
     );
   };
 
